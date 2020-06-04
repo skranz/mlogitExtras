@@ -4,7 +4,7 @@
 \alias{ml_draw_betas}
 \title{Draw random coefficients of individuals for an estimated mixed logit model}
 \usage{
-ml_draw_betas(mod, num.draws = 100, use.halton = FALSE)
+ml_draw_betas(mod, num.draws = 100, use.halton = FALSE, scale = NA)
 }
 \arguments{
 \item{mod}{the estimated models}

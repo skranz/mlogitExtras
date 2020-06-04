@@ -2,7 +2,7 @@
 % Please edit documentation in R/summary.R
 \name{ml_tidy}
 \alias{ml_tidy}
-\title{Get tidy output of estimated coefficients of mlogit model}
+\title{Get tidy output of estimated coefficients of mlogit model as data frame}
 \usage{
 ml_tidy(mod, scale = NA)
 }
@@ -12,5 +12,5 @@ ml_tidy(mod, scale = NA)
 \item{scale}{A numeric value or variable name used to scale coefficients and standard errors. Typical application would be a "price" variable if you estimated a product choice. Then utilities can be interpreted as willingness to pay.}
 }
 \description{
-Get tidy output of estimated coefficients of mlogit model
+Get tidy output of estimated coefficients of mlogit model as data frame
 }

@@ -1,0 +1,15 @@
+Package: mlogitExtras
+Type: Package
+Title: Some extras for the mlogit package
+Version: 0.1.0
+Author: Sebastian Kranz
+Maintainer: Sebastian Kranz <sebastian.kranz@uni-ulm.de>
+Description: Some extras for the mlogit package.
+  I started this package because I could not make the predict function in mlogit robustly 
+  work without errors for mixed logit models. The function ml_predict can be used 
+  as a replacment (but still only works for a subset of random parameter specifications.)
+License: GPL >= 2.0
+Encoding: UTF-8
+LazyData: true
+Depends: mlogit, randtoolbox
+RoxygenNote: 6.1.1

@@ -42,7 +42,14 @@ ml_tidy = function(mod, scale=NA) {
 
   rownames(co) = NULL
   colnames(co) = c("estimate","std.error","z.value","p.value")
-  df = cbind(data.frame(variable = vars),as.data.frame(co))
+  p.value = co[,4]
+  sig = ifelse(p.value <= 0.001, "***",
+    ifelse(p.value <= 0.01, "**",
+    ifelse(p.value <= 0.05, "*",
+    ifelse(p.value <= 0.1, ".",
+    ""
+  ))))
+  df = cbind(data.frame(variable = vars),as.data.frame(co), data.frame(signif=sig))
 
   df
 }

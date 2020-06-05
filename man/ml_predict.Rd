@@ -4,8 +4,19 @@
 \alias{ml_predict}
 \title{Alternative predict function for mlogit objects}
 \usage{
-ml_predict(mod, newdata, J = NA, num.draws = 1000, alts = NA,
-  use.halton = TRUE)
+ml_predict(mod, newdata, num.draws = 1000, use.halton = TRUE)
+}
+\arguments{
+\item{mod}{An estimated mlogit model}
+
+\item{newdata}{A data set for the prediction in long format. The data set should have a column alt the indexed the alternative. The data set must be ordered first by choice situation and each choice situation must have the same number of alternatives in the same order. You may simply add a column chid specifying choice situation then arrange by chid, alt.}
+
+\item{num.draws}{Number of simulated consumers to compute market shares (relevant for mixed logit models only)}
+
+\item{use.halton}{Should Halton sequences instead of pseudo-random numbers be used to simulate consumers (default TRUE)}
+}
+\value{
+A matrix of predicted choice probabilities with one row per choice situation and one column for each alternative. Each row sums up to 1.
 }
 \description{
 Alternative predict function for mlogit objects

@@ -29,6 +29,16 @@ ml_tidy = function(mod, scale=NA) {
 
   vars = rownames(co)
 
+  rpar = mod[["rpar"]]
+  if (length(rpar)>0) {
+    dist = sapply(mod[["rpar"]], function(rp) rp$dist)
+    inds = startsWith(vars, "sd.")
+    co[inds,c(1,3)] = abs(co[inds, c(1,3)])
+
+    span.vars = names(dist)[dist %in% c("u","t")]
+    inds = match(paste0("sd.",span.vars), vars)
+    vars[inds] = paste0("span.", span.vars)
+  }
 
   rownames(co) = NULL
   colnames(co) = c("estimate","std.error","z.value","p.value")

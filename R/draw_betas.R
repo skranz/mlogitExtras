@@ -23,6 +23,9 @@ ml_draw_betas = function(mod, num.draws=100, use.halton = FALSE, scale=NA) {
 
   if (use.halton) {
     beta.unif = randtoolbox::halton(num.draws, dim=K)
+    if (K == 1) {
+      beta.unif = as.matrix(beta.unif, ncol=1)
+    }
   } else {
     beta.unif = matrix(runif(num.draws*K), nrow=num.draws, ncol=K)
   }

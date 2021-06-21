@@ -12,6 +12,7 @@
 ml_predict = function(mod, newdata,num.draws = 1000, use.halton = TRUE) {
   restore.point("mlogit_predict")
 
+
   coef = mod$coefficients
   coef = coef[!startsWith(names(coef), "sd.")]
   rvars = names(mod$rpar)

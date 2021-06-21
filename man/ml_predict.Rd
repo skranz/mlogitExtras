@@ -19,5 +19,6 @@ ml_predict(mod, newdata, num.draws = 1000, use.halton = TRUE)
 A matrix of predicted choice probabilities with one row per choice situation and one column for each alternative. Each row sums up to 1.
 }
 \description{
-Alternative predict function for mlogit objects
+Currently only works for models without alternative specific constants or
+alternative specific interaction effects.
 }
